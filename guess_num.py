@@ -10,3 +10,4 @@ if guess_num < num:
     print("Your number is too low. Guess a bit higher.")
 if guess_num == num:
     print("You got the number!")
+
