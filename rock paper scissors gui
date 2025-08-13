@@ -1,0 +1,25 @@
+import tkinter as tk
+import random
+
+def play(user):
+    comp = random.choice(["Rock", "Paper", "Scissors"])
+    if user == comp:
+        res = "Tie!"
+    elif (user == "Rock" and comp == "Scissors") or (user == "Paper" and comp == "Rock") or (user == "Scissors" and comp == "Paper"):
+        res = "You Win!"
+    else:
+        res = "Computer Wins!"
+    lbl.config(text=f"You: {user}\nComputer: {comp}\n{res}")
+
+w = tk.Tk()
+w.title("RPS")
+w.geometry("250x250")
+
+tk.Label(w, text="Rock Paper Scissors", font=("", 14)).pack(pady=10)
+for choice in ["Rock", "Paper", "Scissors"]:
+    tk.Button(w, text=choice, width=12, command=lambda c=choice: play(c)).pack(pady=3)
+
+lbl = tk.Label(w, text="", font=("", 12))
+lbl.pack(pady=20)
+
+w.mainloop()
