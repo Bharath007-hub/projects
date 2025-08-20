@@ -16,3 +16,5 @@ c = float(input("Enter third number (c): "))
 solver = EquationSolver(a, b, c)
 
 print("Result of (a + b) * c is:", solver.calculate())
+
+print("")
